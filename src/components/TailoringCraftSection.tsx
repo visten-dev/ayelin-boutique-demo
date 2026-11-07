@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Ruler, ShieldCheck, ZoomIn, X, Sparkles, CheckCircle2 } from 'lucide-react';
+import { IMAGES, handleImageFallback } from '../utils/imagePaths';
 
 interface CraftStep {
   number: string;
@@ -20,7 +21,7 @@ const STEPS: CraftStep[] = [
     description:
       'We study your body proportions, comfort preferences, neck depth comfort, and posture to advise on flattering neckline cuts and armhole balance.',
     metric: 'One-on-One Styling',
-    image: '/src/assets/images/craft_silhouette_drape_1793985795807.jpg',
+    image: IMAGES.craftDraping,
     technique: 'Anatomical drape mapping on tailor forms with midnight blue silk and pleated gold tissue fabrics.',
     tools: ['Silk Chiffon Drapes', 'Atelier Mannequins', 'Styling Swatches'],
   },
@@ -31,7 +32,7 @@ const STEPS: CraftStep[] = [
     description:
       'Far beyond standard bust-waist metrics. We map cross-back breadth, apex height, shoulder slope, and biceps circumference to prevent sleeve bunching and back gaping.',
     metric: 'Zero-Pinch Fit',
-    image: '/src/assets/images/craft_measurements_1793985764885.jpg',
+    image: IMAGES.craftMeasurements,
     technique: '28-point calibration ensuring zero shoulder-slipping and seamless underarm movement.',
     tools: ['Brass-Tipped Tape', 'Tailor’s French Curves', 'Chalk Drafting'],
   },
@@ -42,7 +43,7 @@ const STEPS: CraftStep[] = [
     description:
       'Every embroidery pattern is traced onto the raw silk by hand using traditional perforation and chalk techniques before being framed onto wooden aari cots.',
     metric: 'Hand-Traced Motifs',
-    image: '/src/assets/images/craft_stencil_tracing_1793985811593.jpg',
+    image: IMAGES.craftStencil,
     technique: 'Artisan stencils transferred onto pure Mulberry silk with zinc powder and tailor’s chalk.',
     tools: ['Tracing Vellum', 'Peacock Stencils', 'Brass Spool Weights'],
   },
@@ -53,7 +54,7 @@ const STEPS: CraftStep[] = [
     description:
       'A dedicated master karigar embroiders each blouse from start to finish, ensuring consistent tension, delicate pearl anchoring, and flawless gold thread luster.',
     metric: 'Pure Metallic Zari',
-    image: '/src/assets/images/craft_aari_embroidery_1793985779595.jpg',
+    image: IMAGES.craftAari,
     technique: 'Over 48 artisan hours of delicate aari hooked-needle embroidery with micro-pearls and bullion knots.',
     tools: ['Wooden Aari Cot Frame', '24K Gold Zari Coils', 'Seed Pearls'],
   },
@@ -64,7 +65,7 @@ const STEPS: CraftStep[] = [
     description:
       'Lined with premium pre-shrunk cotton, reinforced cup framing, soft French piping, and ample 2-inch side margins for easy lifelong alteration.',
     metric: 'Trial Guarantee',
-    image: '/src/assets/images/craft_couture_assembly_1793985830549.jpg',
+    image: IMAGES.craftAssembly,
     technique: 'Hand-basted cotton canvas interlining with padded cup contouring and satin-piped hem finishing.',
     tools: ['Pre-shrunk Mulmul Cotton', 'French Piping', '2-Inch Future Margin'],
   },
@@ -108,6 +109,7 @@ export const TailoringCraftSection: React.FC = () => {
                   alt={`${step.title} - Ayelin Boutique atelier craft`}
                   className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                   loading="lazy"
+                  onError={handleImageFallback}
                   referrerPolicy="no-referrer"
                 />
                 {/* Deep Scrim */}
@@ -145,7 +147,7 @@ export const TailoringCraftSection: React.FC = () => {
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-[var(--theme-accent)]/20 flex items-center justify-between text-[11px] font-sans">
-                  <span className="uppercase tracking-[0.16em] text-[var(--theme-accent-dark)] font-medium">
+                  <span className="uppercase tracking-[0.16em] text-[var(--theme-primary)] font-semibold">
                     {step.metric}
                   </span>
                   <span className="text-[var(--theme-primary)] group-hover:translate-x-1 transition-transform">
@@ -158,18 +160,18 @@ export const TailoringCraftSection: React.FC = () => {
         </div>
 
         {/* Craftsmanship Banner */}
-        <div className="bg-[var(--theme-primary)] text-[var(--theme-bg)] p-8 sm:p-12 border border-[var(--theme-accent)]/40 shadow-xl relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[var(--theme-card)] via-[var(--theme-bg-subtle)] to-[var(--theme-card)] text-[var(--theme-text)] p-8 sm:p-12 border-2 border-[var(--theme-accent)]/50 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle,_var(--theme-accent)_0%,_transparent_70%)] opacity-20 pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-8">
-              <span className="text-xs font-sans tracking-[0.2em] uppercase text-[#060B18] font-bold block mb-2">
+              <span className="text-xs font-sans tracking-[0.2em] uppercase text-[var(--theme-primary)] font-bold block mb-2">
                 Our Guarantee of Comfort & Longevity
               </span>
-              <h3 className="font-editorial text-3xl sm:text-4xl font-light text-[#060B18] mb-4">
-                The Ayelin Perfect-Fit Promise
+              <h3 className="font-editorial text-3xl sm:text-4xl font-light text-[var(--theme-text)] mb-4">
+                The Ayelin <span className="italic text-[var(--theme-primary)]">Perfect-Fit Promise</span>
               </h3>
-              <p className="text-sm text-[#060B18]/90 font-sans leading-relaxed max-w-2xl">
+              <p className="text-sm text-[var(--theme-text-muted)] font-sans leading-relaxed max-w-2xl">
                 We know the anxiety of big event dates. That’s why we offer complimentary trial
                 fittings, guaranteed delivery schedules, and lifetime alteration allowances on all custom
                 bridal and festive outfits.
@@ -177,12 +179,12 @@ export const TailoringCraftSection: React.FC = () => {
             </div>
 
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-center">
-              <div className="flex items-center gap-3 bg-[#060B18]/15 p-3.5 border border-[#060B18]/25 text-[#060B18] backdrop-blur-xs">
-                <ShieldCheck className="w-5 h-5 text-[#060B18] shrink-0" />
+              <div className="flex items-center gap-3 bg-[var(--theme-bg)]/80 p-3.5 border border-[var(--theme-accent)]/40 text-[var(--theme-text)] backdrop-blur-xs">
+                <ShieldCheck className="w-5 h-5 text-[var(--theme-primary)] shrink-0" />
                 <span className="text-xs font-sans tracking-wide font-medium">Complimentary Fitting Adjustments</span>
               </div>
-              <div className="flex items-center gap-3 bg-[#060B18]/15 p-3.5 border border-[#060B18]/25 text-[#060B18] backdrop-blur-xs">
-                <Ruler className="w-5 h-5 text-[#060B18] shrink-0" />
+              <div className="flex items-center gap-3 bg-[var(--theme-bg)]/80 p-3.5 border border-[var(--theme-accent)]/40 text-[var(--theme-text)] backdrop-blur-xs">
+                <Ruler className="w-5 h-5 text-[var(--theme-primary)] shrink-0" />
                 <span className="text-xs font-sans tracking-wide font-medium">2-Inch Hidden Margin for Future Sizing</span>
               </div>
             </div>
@@ -209,6 +211,7 @@ export const TailoringCraftSection: React.FC = () => {
                 src={selectedStep.image}
                 alt={selectedStep.title}
                 className="w-full h-full object-cover"
+                onError={handleImageFallback}
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent md:hidden" />

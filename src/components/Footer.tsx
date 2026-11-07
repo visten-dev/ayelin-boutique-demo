@@ -13,9 +13,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation, onReplayIntr
   };
 
   return (
-    <footer className="bg-[var(--theme-footer-bg)] text-[var(--theme-bg)] border-t border-[var(--theme-accent)]/30 relative overflow-hidden transition-colors duration-500">
+    <footer className="bg-[var(--theme-footer-bg)] text-[var(--theme-text)] border-t border-[var(--theme-accent)]/30 relative overflow-hidden transition-colors duration-500">
       {/* Background ambient gold tint */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_bottom,_var(--theme-accent)_0%,_transparent_70%)] opacity-12 pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_bottom,_var(--theme-accent)_0%,_transparent_70%)] opacity-15 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 py-16 lg:py-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
@@ -26,17 +26,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation, onReplayIntr
                 src="/assets/aistudio/ayelin_boutiq_logo_c4a85613.jpg"
                 alt="Ayelin Boutique Logo"
                 className="w-12 h-12 rounded-full border border-[var(--theme-accent)]/70 object-cover shadow-md"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/ayelin_boutiq_logo_c4a85613.jpg';
+                }}
               />
-              <span className="font-editorial text-2xl tracking-[0.24em] text-[var(--theme-bg)] uppercase">
+              <span className="font-editorial text-2xl tracking-[0.24em] text-[var(--theme-text)] uppercase font-medium">
                 AYELIN BOUTIQUE
               </span>
             </div>
 
-            <p className="font-editorial text-xl italic text-[var(--theme-accent)] tracking-wide">
+            <p className="font-editorial text-xl italic text-[var(--theme-primary)] tracking-wide">
               "Crafted to Make You Unforgettable."
             </p>
 
-            <p className="text-xs sm:text-sm text-[var(--theme-bg-subtle)]/75 font-sans leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-[var(--theme-text-muted)] font-sans leading-relaxed max-w-sm">
               Premier designer boutique & bespoke atelier located in Medavakkam, Chennai.
               Specializing in bridal blouses, royal lehengas, party gowns, and custom embroidery.
             </p>
@@ -58,32 +61,32 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation, onReplayIntr
 
           {/* Navigation Links */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-sans tracking-[0.22em] uppercase text-[var(--theme-accent)] font-semibold">
+            <h4 className="text-xs font-sans tracking-[0.22em] uppercase text-[var(--theme-primary)] font-semibold">
               Explore Atelier
             </h4>
-            <ul className="space-y-2.5 text-xs font-sans tracking-[0.12em] uppercase text-[var(--theme-bg-subtle)]/80">
+            <ul className="space-y-2.5 text-xs font-sans tracking-[0.12em] uppercase text-[var(--theme-text-muted)]">
               <li>
-                <a href="#about" className="hover:text-[var(--theme-accent)] transition-colors">
+                <a href="#about" className="hover:text-[var(--theme-primary)] transition-colors">
                   About Ayelin
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[var(--theme-accent)] transition-colors">
+                <a href="#services" className="hover:text-[var(--theme-primary)] transition-colors">
                   Bespoke Services
                 </a>
               </li>
               <li>
-                <a href="#collection" className="hover:text-[var(--theme-accent)] transition-colors">
+                <a href="#collection" className="hover:text-[var(--theme-primary)] transition-colors">
                   Signature Collection
                 </a>
               </li>
               <li>
-                <a href="#craftsmanship" className="hover:text-[var(--theme-accent)] transition-colors">
+                <a href="#craftsmanship" className="hover:text-[var(--theme-primary)] transition-colors">
                   The Art of Tailoring
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[var(--theme-accent)] transition-colors">
+                <a href="#contact" className="hover:text-[var(--theme-primary)] transition-colors">
                   Contact & Location
                 </a>
               </li>
@@ -91,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation, onReplayIntr
                 <li>
                   <button
                     onClick={onReplayIntro}
-                    className="hover:text-[var(--theme-accent)] transition-colors text-left uppercase text-[11px] text-[var(--theme-accent)]/90 cursor-pointer"
+                    className="hover:text-[var(--theme-primary)] transition-colors text-left uppercase text-[11px] text-[var(--theme-accent-light)] cursor-pointer"
                   >
                     ✦ Replay Brand Story Intro
                   </button>
@@ -102,19 +105,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation, onReplayIntr
 
           {/* Boutique Visit & Connect */}
           <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-xs font-sans tracking-[0.22em] uppercase text-[var(--theme-accent)] font-semibold">
+            <h4 className="text-xs font-sans tracking-[0.22em] uppercase text-[var(--theme-primary)] font-semibold">
               Visit The Boutique
             </h4>
 
-            <div className="space-y-3 text-xs font-sans text-[var(--theme-bg-subtle)]/80">
+            <div className="space-y-3 text-xs font-sans text-[var(--theme-text-muted)]">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[var(--theme-accent)] shrink-0 mt-0.5" />
-                <span>{BOUTIQUE_ADDRESS}</span>
+                <MapPin className="w-4 h-4 text-[var(--theme-primary)] shrink-0 mt-0.5" />
+                <span className="text-[var(--theme-text)]">{BOUTIQUE_ADDRESS}</span>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[var(--theme-accent)] shrink-0" />
-                <a href={`tel:${BOUTIQUE_PHONE}`} className="hover:text-[var(--theme-accent)] transition-colors">
+                <Phone className="w-4 h-4 text-[var(--theme-primary)] shrink-0" />
+                <a href={`tel:${BOUTIQUE_PHONE}`} className="hover:text-[var(--theme-primary)] transition-colors text-[var(--theme-text)]">
                   {BOUTIQUE_DISPLAY_PHONE}
                 </a>
               </div>
@@ -124,7 +127,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation, onReplayIntr
                   href="https://www.instagram.com/ayelinboutique"
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2 border border-[var(--theme-accent)]/40 hover:border-[var(--theme-accent)] text-[var(--theme-accent)] hover:text-[#FFF4D4] transition-colors rounded-sm"
+                  className="p-2 border border-[var(--theme-accent)]/40 hover:border-[var(--theme-accent)] text-[var(--theme-primary)] hover:text-white hover:bg-[var(--theme-accent)]/20 transition-colors rounded-sm"
                   title="Ayelin Boutique Instagram (@ayelinboutique)"
                   aria-label="Instagram"
                 >
@@ -135,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation, onReplayIntr
                   href={`https://wa.me/${BOUTIQUE_PHONE}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2 border border-[var(--theme-accent)]/40 hover:border-[var(--theme-accent)] text-[var(--theme-accent)] hover:text-[#FFF4D4] transition-colors rounded-sm"
+                  className="p-2 border border-[var(--theme-accent)]/40 hover:border-[var(--theme-accent)] text-[var(--theme-primary)] hover:text-white hover:bg-[var(--theme-accent)]/20 transition-colors rounded-sm"
                   title="Ayelin Boutique WhatsApp"
                   aria-label="WhatsApp"
                 >
@@ -146,7 +149,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation, onReplayIntr
                   href="https://www.google.com/maps/search/?api=1&query=Ayelin+Boutique+Medavakkam+Chennai"
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2 border border-[var(--theme-accent)]/40 hover:border-[var(--theme-accent)] text-[var(--theme-accent)] hover:text-[#FFF4D4] transition-colors rounded-sm"
+                  className="p-2 border border-[var(--theme-accent)]/40 hover:border-[var(--theme-accent)] text-[var(--theme-primary)] hover:text-white hover:bg-[var(--theme-accent)]/20 transition-colors rounded-sm"
                   title="Find on Google Maps"
                   aria-label="Google Maps"
                 >
@@ -158,17 +161,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation, onReplayIntr
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[var(--theme-accent)]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[var(--theme-bg-subtle)]/60">
+        <div className="pt-8 border-t border-[var(--theme-accent)]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[var(--theme-text-muted)]">
           <p>
             © {new Date().getFullYear()} Ayelin Boutique. All rights reserved. ·{' '}
-            <a href="https://www.ayelins.com/" target="_blank" rel="noreferrer" className="hover:underline">
+            <a href="https://www.ayelins.com/" target="_blank" rel="noreferrer" className="text-[var(--theme-primary)] hover:underline">
               www.ayelins.com
             </a>
           </p>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-[var(--theme-accent)] hover:text-white transition-colors cursor-pointer uppercase tracking-[0.16em] text-[11px]"
+            className="flex items-center gap-1.5 text-[var(--theme-primary)] hover:text-white transition-colors cursor-pointer uppercase tracking-[0.16em] text-[11px]"
           >
             <span>Back to Top</span>
             <ArrowUp className="w-3.5 h-3.5" />

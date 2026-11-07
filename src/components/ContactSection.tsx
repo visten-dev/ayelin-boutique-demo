@@ -210,17 +210,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
             </div>
 
             {/* Interactive Location Preview Card */}
-            <div className="bg-[var(--theme-primary-dark)] text-[var(--theme-bg)] p-6 border border-[var(--theme-accent)]/40 shadow-md">
+            <div className="bg-[var(--theme-card)] text-[var(--theme-text)] p-6 border border-[var(--theme-accent)]/40 shadow-md">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-[11px] font-sans tracking-[0.2em] uppercase text-[var(--theme-accent)]">
+                <span className="text-[11px] font-sans tracking-[0.2em] uppercase text-[var(--theme-primary)] font-semibold">
                   Boutique Location
                 </span>
-                <span className="text-[11px] text-[var(--theme-bg-subtle)]/60">South Chennai</span>
+                <span className="text-[11px] text-[var(--theme-text-muted)]">South Chennai</span>
               </div>
-              <p className="font-editorial text-lg text-[var(--theme-bg)]">
+              <p className="font-editorial text-lg text-[var(--theme-text)]">
                 Conveniently situated along the Mambakkam – Medavakkam Main Road
               </p>
-              <p className="text-xs text-[var(--theme-bg-subtle)]/75 font-sans mt-2 leading-relaxed">
+              <p className="text-xs text-[var(--theme-text-muted)] font-sans mt-2 leading-relaxed">
                 Easily accessible from Velachery, Pallikaranai, Perumbakkam, Tambaram, and OMR.
                 Dedicated customer parking is available.
               </p>
@@ -269,7 +269,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-6">
                   <div>
-                    <span className="text-[11px] font-sans tracking-[0.2em] uppercase text-[var(--theme-accent-dark)] block mb-1 font-medium">
+                    <span className="text-[11px] font-sans tracking-[0.2em] uppercase text-[var(--theme-primary)] block mb-1 font-semibold">
                       Concierge Form
                     </span>
                     <h3 className="font-editorial text-2xl sm:text-3xl text-[var(--theme-text)] font-normal">
@@ -495,7 +495,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
                     type="submit"
                     className="w-full py-4 text-center text-xs tracking-[0.22em] uppercase font-medium bg-[var(--theme-primary)] hover:bg-[var(--theme-primary-dark)] text-[var(--theme-bg)] border border-[var(--theme-accent)]/50 transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center gap-2"
                   >
-                    <Calendar className="w-4 h-4 text-[var(--theme-accent)]" />
+                    <Calendar className="w-4 h-4 text-current" />
                     <span>Confirm Consultation Request</span>
                   </button>
 

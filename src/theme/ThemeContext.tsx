@@ -43,12 +43,12 @@ export const THEME_CONFIGS: Record<ThemeId, ThemeConfig> = {
       primaryUltraDark: '#03060E',
       accent: '#DFBA63', // 24K Royal Gold
       accentLight: '#F7E6B8',
-      accentDark: '#B38E33',
+      accentDark: '#C49E44',
       bg: '#060B18', // Deep Royal Blue Background
       bgSubtle: '#0B132B', // Secondary Royal Navy Surface
       card: '#0F1A38', // Elevated Royal Sapphire Card
       text: '#FBF8F2', // Crisp Warm Ivory
-      textMuted: '#9EADC6', // Refined Silver-Blue
+      textMuted: '#CBD5E1', // Refined High-Contrast Silver-Blue
       footerBg: '#030712', // Midnight Couture Footer
       previewDotPrimary: '#0C1C42',
       previewDotAccent: '#DFBA63',
@@ -68,12 +68,12 @@ export const THEME_CONFIGS: Record<ThemeId, ThemeConfig> = {
       primaryUltraDark: '#0A0205',
       accent: '#E2BD6D',
       accentLight: '#F8E8C0',
-      accentDark: '#B69038',
+      accentDark: '#C59F49',
       bg: '#0F0408',
       bgSubtle: '#1A070E',
       card: '#260B15',
       text: '#FBF7F2',
-      textMuted: '#C2A3AE',
+      textMuted: '#E2CCD4',
       footerBg: '#080104',
       previewDotPrimary: '#380F1F',
       previewDotAccent: '#E2BD6D',
@@ -93,12 +93,12 @@ export const THEME_CONFIGS: Record<ThemeId, ThemeConfig> = {
       primaryUltraDark: '#020A07',
       accent: '#E2BD6D',
       accentLight: '#F8E8C0',
-      accentDark: '#B69038',
+      accentDark: '#C59F49',
       bg: '#040E0A',
       bgSubtle: '#091A14',
       card: '#0F261E',
       text: '#FBF8F3',
-      textMuted: '#97B3A6',
+      textMuted: '#C2DDD2',
       footerBg: '#020806',
       previewDotPrimary: '#0F2E23',
       previewDotAccent: '#E2BD6D',
@@ -118,12 +118,12 @@ export const THEME_CONFIGS: Record<ThemeId, ThemeConfig> = {
       primaryUltraDark: '#050507',
       accent: '#DCA28E',
       accentLight: '#F2C6B6',
-      accentDark: '#AF7663',
+      accentDark: '#C48A77',
       bg: '#09090D',
       bgSubtle: '#121218',
       card: '#1A1A22',
       text: '#FBF8F4',
-      textMuted: '#A6A4B2',
+      textMuted: '#D5D4E0',
       footerBg: '#050507',
       previewDotPrimary: '#171720',
       previewDotAccent: '#DCA28E',

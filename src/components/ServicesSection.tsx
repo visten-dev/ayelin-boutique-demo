@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ServiceCategory } from '../types';
 import { ArrowUpRight, Clock, X, Check, Calendar } from 'lucide-react';
 import { buildQuickWhatsAppInquiry } from '../utils/booking';
+import { IMAGES, handleImageFallback } from '../utils/imagePaths';
 
 interface ServicesSectionProps {
   onSelectServiceForBooking: (serviceTitle: string) => void;
@@ -22,7 +23,7 @@ const SERVICES_DATA: ServiceCategory[] = [
     ],
     timeline: '3 to 7 working days',
     recommendedFor: 'Muhurtham silk sarees, wedding receptions, festive celebrations',
-    image: '/src/assets/images/bridal_blouse_embroidery_1793981342674.jpg',
+    image: IMAGES.bridalBlouse,
   },
   {
     id: 'bridal',
@@ -38,7 +39,7 @@ const SERVICES_DATA: ServiceCategory[] = [
     ],
     timeline: '14 to 25 working days',
     recommendedFor: 'Bridal muhurtham, grand sangeet, reception gala',
-    image: '/src/assets/images/craft_couture_assembly_1793985830549.jpg',
+    image: IMAGES.craftAssembly,
   },
   {
     id: 'lehenga',
@@ -54,7 +55,7 @@ const SERVICES_DATA: ServiceCategory[] = [
     ],
     timeline: '10 to 20 working days',
     recommendedFor: 'Sangeet nights, destination weddings, milestone birthdays',
-    image: '/src/assets/images/luxury_bridal_lehenga_1793981343801.jpg',
+    image: IMAGES.bridalLehenga,
   },
   {
     id: 'anarkali',
@@ -70,7 +71,7 @@ const SERVICES_DATA: ServiceCategory[] = [
     ],
     timeline: '5 to 10 working days',
     recommendedFor: 'Diwali, Eid, family pujas, intimate engagements',
-    image: '/src/assets/images/designer_ethnic_anarkali_1793981344315.jpg',
+    image: IMAGES.anarkali,
   },
   {
     id: 'gowns',
@@ -86,7 +87,7 @@ const SERVICES_DATA: ServiceCategory[] = [
     ],
     timeline: '7 to 14 working days',
     recommendedFor: 'Cocktail evenings, reception parties, anniversary celebrations',
-    image: '/assets/aistudio/dress_1_70648e46.jpg',
+    image: IMAGES.dressHero,
   },
   {
     id: 'kids',
@@ -102,7 +103,7 @@ const SERVICES_DATA: ServiceCategory[] = [
     ],
     timeline: '4 to 7 working days',
     recommendedFor: 'Ear-piercing ceremonies, first birthdays, temple visits',
-    image: '/src/assets/images/mother_daughter_couture_1793981346242.jpg',
+    image: IMAGES.motherDaughter,
   },
   {
     id: 'mom-daughter',
@@ -118,7 +119,7 @@ const SERVICES_DATA: ServiceCategory[] = [
     ],
     timeline: '10 to 15 working days',
     recommendedFor: 'First birthdays, family portraits, Diwali, weddings',
-    image: '/src/assets/images/craft_silhouette_drape_1793985795807.jpg',
+    image: IMAGES.craftDraping,
   },
   {
     id: 'embroidery',
@@ -134,7 +135,7 @@ const SERVICES_DATA: ServiceCategory[] = [
     ],
     timeline: '5 to 12 working days',
     recommendedFor: 'Blouse sleeves, veil borders, lehenga waistbands',
-    image: '/src/assets/images/craft_aari_embroidery_1793985779595.jpg',
+    image: IMAGES.craftAari,
   },
 ];
 
@@ -180,6 +181,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                     loading="lazy"
+                    onError={handleImageFallback}
                     referrerPolicy="no-referrer"
                   />
                 )}
@@ -204,7 +206,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   <h3 className="font-editorial text-xl sm:text-2xl text-[var(--theme-text)] group-hover:text-[var(--theme-primary)] transition-colors font-normal leading-snug mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-xs text-[var(--theme-accent-dark)] font-sans font-medium tracking-wide uppercase line-clamp-2">
+                  <p className="text-xs text-[var(--theme-primary)] font-sans font-semibold tracking-wide uppercase line-clamp-2">
                     {service.tagline}
                   </p>
                 </div>
@@ -245,6 +247,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   src={activeModalService.image}
                   alt={activeModalService.title}
                   className="w-full h-full object-cover"
+                  onError={handleImageFallback}
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--theme-bg)] via-black/40 to-transparent" />

@@ -18,7 +18,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
           {/* Left Column: Editorial Headline & Brand Story */}
           <div className="lg:col-span-5 flex flex-col justify-center z-10">
             {/* Clean Unboxed Metadata Kicker (Zero-Pill Discipline) */}
-            <div className="flex items-center gap-2 text-xs font-sans tracking-[0.22em] uppercase text-[var(--theme-accent-dark)] mb-4">
+            <div className="flex items-center gap-2 text-xs font-sans tracking-[0.22em] uppercase text-[var(--theme-primary)] font-semibold mb-4">
               <span>Medavakkam, Chennai</span>
               <span aria-hidden="true">·</span>
               <span>Haute Couture Atelier</span>
@@ -36,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
             </h1>
 
             {/* Subheading */}
-            <p className="text-base text-[var(--theme-text)]/80 font-sans font-light leading-relaxed mb-8 max-w-lg">
+            <p className="text-base text-[var(--theme-text)]/85 font-sans font-light leading-relaxed mb-8 max-w-lg">
               Discover the art of personalized fashion. From exquisite bridal blouses to
               beautifully crafted designer outfits, every creation is tailored around you.
             </p>
@@ -63,15 +63,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
             <div className="pt-6 border-t border-[var(--theme-accent)]/25 grid grid-cols-3 gap-4">
               <div>
                 <p className="font-editorial text-2xl text-[var(--theme-primary)] font-normal">28+</p>
-                <p className="text-[11px] font-sans tracking-[0.1em] uppercase text-[var(--theme-accent-dark)]">Precision Points</p>
+                <p className="text-[11px] font-sans tracking-[0.1em] uppercase text-[var(--theme-text-muted)] font-medium">Precision Points</p>
               </div>
               <div>
                 <p className="font-editorial text-2xl text-[var(--theme-primary)] font-normal">100%</p>
-                <p className="text-[11px] font-sans tracking-[0.1em] uppercase text-[var(--theme-accent-dark)]">Custom Tailoring</p>
+                <p className="text-[11px] font-sans tracking-[0.1em] uppercase text-[var(--theme-text-muted)] font-medium">Custom Tailoring</p>
               </div>
               <div>
                 <p className="font-editorial text-2xl text-[var(--theme-primary)] font-normal">Handmade</p>
-                <p className="text-[11px] font-sans tracking-[0.1em] uppercase text-[var(--theme-accent-dark)]">Aari & Zardosi</p>
+                <p className="text-[11px] font-sans tracking-[0.1em] uppercase text-[var(--theme-text-muted)] font-medium">Aari & Zardosi</p>
               </div>
             </div>
           </div>

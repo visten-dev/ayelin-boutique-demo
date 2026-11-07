@@ -35,7 +35,7 @@ export const TestimonialsSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[var(--theme-accent)]/30 gap-6">
           <div>
-            <div className="flex items-center gap-2 text-xs font-sans tracking-[0.22em] uppercase text-[var(--theme-accent-dark)] mb-2">
+            <div className="flex items-center gap-2 text-xs font-sans tracking-[0.22em] uppercase text-[var(--theme-primary)] font-semibold mb-2">
               <span>Client Voices</span>
               <span aria-hidden="true">·</span>
               <span>Medavakkam Community</span>
@@ -55,7 +55,7 @@ export const TestimonialsSection: React.FC = () => {
               href="https://www.google.com/maps/search/?api=1&query=Ayelin+Boutique+Medavakkam+Chennai"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-[0.16em] text-[var(--theme-primary)] hover:text-[var(--theme-accent-dark)] border-b border-[var(--theme-primary)] pb-0.5"
+              className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-[0.16em] text-[var(--theme-primary)] hover:text-[var(--theme-accent-light)] border-b border-[var(--theme-primary)] pb-0.5"
             >
               <span>View Google Reviews</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -68,12 +68,12 @@ export const TestimonialsSection: React.FC = () => {
           {testimonials.map((item) => (
             <div
               key={item.id}
-              className="bg-[var(--theme-bg)] border border-[var(--theme-accent)]/30 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-shadow duration-300 relative"
+              className="bg-[var(--theme-card)] border border-[var(--theme-accent)]/30 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-shadow duration-300 relative"
             >
               <div className="mb-6">
                 {/* Clean unboxed tag */}
-                <div className="flex items-center justify-between text-xs font-sans text-[var(--theme-accent-dark)] mb-4">
-                  <span className="uppercase tracking-[0.15em] font-medium">{item.tag}</span>
+                <div className="flex items-center justify-between text-xs font-sans text-[var(--theme-primary)] font-semibold mb-4">
+                  <span className="uppercase tracking-[0.15em]">{item.tag}</span>
                   <div className="flex text-[var(--theme-accent)]">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3 h-3 fill-[var(--theme-accent)]" />
@@ -85,14 +85,14 @@ export const TestimonialsSection: React.FC = () => {
                   "{item.highlight}"
                 </p>
 
-                <p className="text-xs sm:text-sm text-[var(--theme-text)]/80 font-sans leading-relaxed">
+                <p className="text-xs sm:text-sm text-[var(--theme-text)]/85 font-sans leading-relaxed">
                   "{item.review}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[var(--theme-bg-subtle)] flex items-center justify-between text-xs font-sans text-[var(--theme-text)]/60">
-                <span className="flex items-center gap-1 text-[var(--theme-accent-dark)]">
-                  <CheckCircle className="w-3 h-3 text-[var(--theme-accent)]" />
+              <div className="pt-4 border-t border-[var(--theme-accent)]/20 flex items-center justify-between text-xs font-sans text-[var(--theme-text-muted)]">
+                <span className="flex items-center gap-1 text-[var(--theme-primary)] font-medium">
+                  <CheckCircle className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
                   <span>Verified Google Review</span>
                 </span>
                 <span>{item.neighborhood}</span>

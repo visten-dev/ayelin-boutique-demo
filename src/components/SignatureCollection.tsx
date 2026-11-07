@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CollectionItem } from '../types';
 import { X, MessageCircle, ZoomIn } from 'lucide-react';
 import { buildQuickWhatsAppInquiry } from '../utils/booking';
+import { IMAGES, handleImageFallback } from '../utils/imagePaths';
 
 interface SignatureCollectionProps {
   onOpenConsultation: () => void;
@@ -17,7 +18,7 @@ const COLLECTION_DATA: CollectionItem[] = [
       'High-relief peacock (Mayil) motif rendered in antique champagne gold zari, micro-pearls, and French bullion knots on rich crimson raw silk. Designed with a deep sweetheart neckline and padded contour support.',
     craftDetails: 'Over 64 artisan hours of intensive hand needlework; reinforced armscye and hand-finished piping.',
     fabric: 'Pure Raw Mulberry Silk & Antique Gold Zari',
-    image: '/src/assets/images/bridal_blouse_embroidery_1793981342674.jpg',
+    image: IMAGES.bridalBlouse,
     aspect: 'portrait',
   },
   {
@@ -29,7 +30,7 @@ const COLLECTION_DATA: CollectionItem[] = [
       'A majestic bridal ensemble in royal deep burgundy silk velvet and banarasi brocade. Features 24 hand-embroidered floral arch kalis paired with a shimmering golden organza dupatta veil.',
     craftDetails: 'Multi-layer flared can-can structure, custom kamarbandh waistband, and bespoke hanging latkan tassels.',
     fabric: 'Silk Velvet, Pure Banarasi Brocade & Metallic Tissue Dupatta',
-    image: '/src/assets/images/luxury_bridal_lehenga_1793981343801.jpg',
+    image: IMAGES.bridalLehenga,
     aspect: 'portrait',
   },
   {
@@ -41,7 +42,7 @@ const COLLECTION_DATA: CollectionItem[] = [
       'Ethereal floor-length flared silhouette in warm ivory georgette with cascading gold foil threadwork, delicate mukesh highlights, and gossamer scalloped dupatta.',
     craftDetails: '32 floor-skimming panels with lightweight crinoline hem tape for fluid twirling motion.',
     fabric: 'Fine Georgette, Mulmul Silk Lining & Gold Zari Scalloping',
-    image: '/src/assets/images/designer_ethnic_anarkali_1793981344315.jpg',
+    image: IMAGES.anarkali,
     aspect: 'portrait',
   },
   {
@@ -53,7 +54,7 @@ const COLLECTION_DATA: CollectionItem[] = [
       'An intimate glimpse inside the Ayelin atelier: pure South Indian raw silk drafted by hand with tailor’s chalk, brass shears, and gold zari spools before bespoke cut.',
     craftDetails: 'Individual measurement drafting ensuring zero shoulder slipping and seamless front-to-back symmetry.',
     fabric: 'Pure South Indian Handloom Raw Silk',
-    image: '/src/assets/images/atelier_tailoring_craft_1793981346137.jpg',
+    image: IMAGES.atelierTailor,
     aspect: 'landscape',
   },
   {
@@ -65,7 +66,7 @@ const COLLECTION_DATA: CollectionItem[] = [
       'An exquisite Ayelin Boutique creation: sculpted sheer-illusion neckline embellished with shimmering midnight sequins and floral embroidery, puffed translucent tulle quarter-sleeves with scalloped cuffs, and a grand flared floor-sweeping organza skirt with an ornate embroidered border.',
     craftDetails: 'Handcrafted floral beadwork bodice with built-in bustier framing; scalloped hem embroidery with soft petticoat volume.',
     fabric: 'Midnight Blue French Tulle, Silk Crepe & Shimmer Organza',
-    image: '/assets/aistudio/dress_1_70648e46.jpg',
+    image: IMAGES.dressHero,
     aspect: 'portrait',
   },
   {
@@ -77,7 +78,7 @@ const COLLECTION_DATA: CollectionItem[] = [
       'Coordinated festive celebration attire in blush pink and warm ivory silk. Designed to harmonize embroidery themes while prioritizing gentle, itch-free comfort for the little one.',
     craftDetails: '100% soft cotton inner protective lining, growth-adjustable hems, and matching potli bag accessories.',
     fabric: 'Blush Chanderi Silk & Pure Cotton Lining',
-    image: '/src/assets/images/mother_daughter_couture_1793981346242.jpg',
+    image: IMAGES.motherDaughter,
     aspect: 'landscape',
   },
 ];
@@ -149,7 +150,7 @@ export const SignatureCollection: React.FC<SignatureCollectionProps> = ({
               >
                 {/* Image Container with Smooth Hover Scale */}
                 <div
-                  className={`relative overflow-hidden bg-[var(--theme-primary)] ${
+                  className={`relative overflow-hidden bg-[var(--theme-card)] ${
                     isTall ? 'h-[460px] sm:h-[520px]' : 'h-[360px] sm:h-[400px]'
                   }`}
                 >
@@ -157,6 +158,7 @@ export const SignatureCollection: React.FC<SignatureCollectionProps> = ({
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    onError={handleImageFallback}
                     referrerPolicy="no-referrer"
                   />
                   {/* Subtle Gradient Scrim */}
@@ -223,11 +225,12 @@ export const SignatureCollection: React.FC<SignatureCollectionProps> = ({
             </button>
 
             {/* Left: High-Res Image Showcase */}
-            <div className="md:w-1/2 bg-[var(--theme-primary)] relative min-h-[320px] md:min-h-full">
+            <div className="md:w-1/2 bg-[var(--theme-card)] relative min-h-[320px] md:min-h-full">
               <img
                 src={activeItem.image}
                 alt={activeItem.title}
                 className="w-full h-full object-cover"
+                onError={handleImageFallback}
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -235,7 +238,7 @@ export const SignatureCollection: React.FC<SignatureCollectionProps> = ({
             {/* Right: Craftsmanship & Inquiry Details */}
             <div className="md:w-1/2 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
               <div>
-                <span className="text-xs font-sans tracking-[0.2em] uppercase text-[var(--theme-accent-dark)]">
+                <span className="text-xs font-sans tracking-[0.2em] uppercase text-[var(--theme-primary)] font-semibold">
                   {activeItem.categoryName} · Haute Couture
                 </span>
                 <h3 className="font-editorial text-3xl text-[var(--theme-primary)] font-normal mt-1 mb-4 leading-tight">

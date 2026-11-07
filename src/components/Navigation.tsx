@@ -51,6 +51,9 @@ export const Navigation: React.FC<NavigationProps> = ({
             src="/assets/aistudio/ayelin_boutiq_logo_c4a85613.jpg"
             alt="Ayelin Boutique Emblem"
             className="w-8 h-8 rounded-full border border-[var(--theme-accent)]/60 object-cover shadow-sm group-hover:scale-105 transition-transform"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = '/images/ayelin_boutiq_logo_c4a85613.jpg';
+            }}
           />
           <span>AYELIN BOUTIQUE</span>
         </a>
@@ -99,7 +102,7 @@ export const Navigation: React.FC<NavigationProps> = ({
             href="https://www.instagram.com/ayelinboutique"
             target="_blank"
             rel="noreferrer"
-            className="hidden sm:flex p-1.5 sm:p-2 text-[var(--theme-accent-dark)] hover:text-[#E1306C] transition-colors rounded-full cursor-pointer"
+            className="hidden sm:flex p-1.5 sm:p-2 text-[var(--theme-primary)] hover:text-[#E1306C] transition-colors rounded-full cursor-pointer"
             title="Ayelin Boutique Instagram (@ayelinboutique)"
             aria-label="Instagram"
           >
@@ -109,7 +112,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           {/* Sound Atmosphere Toggle */}
           <button
             onClick={toggleSound}
-            className="p-1.5 sm:p-2 text-[var(--theme-accent-dark)] hover:text-[var(--theme-primary)] transition-colors rounded-full cursor-pointer"
+            className="p-1.5 sm:p-2 text-[var(--theme-primary)] hover:text-[var(--theme-accent-light)] transition-colors rounded-full cursor-pointer"
             title={isMuted ? 'Turn Sound On' : 'Mute Atmospheric Chimes'}
             aria-label={isMuted ? 'Turn Sound On' : 'Mute Atmospheric Chimes'}
           >
@@ -120,7 +123,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           {onReplayIntro && (
             <button
               onClick={onReplayIntro}
-              className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-sans tracking-[0.14em] uppercase text-[var(--theme-accent-dark)] hover:text-[var(--theme-primary)] transition-colors border border-[var(--theme-accent)]/30 hover:border-[var(--theme-accent)] rounded-sm cursor-pointer"
+              className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-sans tracking-[0.14em] uppercase text-[var(--theme-primary)] hover:text-[var(--theme-accent-light)] transition-colors border border-[var(--theme-accent)]/40 hover:border-[var(--theme-accent)] rounded-sm cursor-pointer"
               title="Experience Brand Intro"
             >
               <Sparkles className="w-3 h-3 text-[var(--theme-accent)]" />

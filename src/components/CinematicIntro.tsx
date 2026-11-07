@@ -226,6 +226,9 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
                   src="/assets/aistudio/ayelin_boutiq_logo_c4a85613.jpg"
                   alt="Ayelin Boutique Official Emblem"
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/images/ayelin_boutiq_logo_c4a85613.jpg';
+                  }}
                 />
 
                 {/* Golden Light Shimmer Sweep across the Emblem */}

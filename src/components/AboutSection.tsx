@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles, Scissors } from 'lucide-react';
+import { IMAGES, handleImageFallback } from '../utils/imagePaths';
 
 interface AboutSectionProps {
   onOpenConsultation: () => void;
@@ -18,19 +19,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultation }
               <div className="absolute -top-4 -left-4 w-full h-full border border-[var(--theme-accent)]/40 pointer-events-none hidden sm:block" />
 
               {/* Main Atelier Image */}
-              <div className="relative overflow-hidden shadow-2xl bg-[var(--theme-primary)]">
+              <div className="relative overflow-hidden shadow-2xl bg-[var(--theme-card)]">
                 <img
-                  src="/src/assets/images/atelier_tailoring_craft_1793981346137.jpg"
+                  src={IMAGES.atelierTailor}
                   alt="Ayelin Boutique master tailor measuring raw silk at the Chennai atelier"
                   className="w-full h-[440px] sm:h-[520px] object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                  onError={handleImageFallback}
                   referrerPolicy="no-referrer"
                 />
                 {/* Subtle scrim overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
                 {/* Floating caption tag */}
-                <div className="absolute bottom-6 left-6 right-6 p-4 bg-[var(--theme-bg)]/95 border-l-2 border-[var(--theme-accent)] shadow-lg">
-                  <p className="text-[11px] font-sans tracking-[0.2em] uppercase text-[var(--theme-accent-dark)] font-medium">
+                <div className="absolute bottom-6 left-6 right-6 p-4 bg-[var(--theme-card)]/95 border-l-2 border-[var(--theme-accent)] shadow-xl">
+                  <p className="text-[11px] font-sans tracking-[0.2em] uppercase text-[var(--theme-primary)] font-semibold">
                     The Medavakkam Atelier
                   </p>
                   <p className="font-editorial text-lg text-[var(--theme-text)] mt-0.5">
@@ -44,7 +46,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultation }
           {/* Right Column: Editorial Brand Story */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             {/* Clean metadata kicker */}
-            <div className="flex items-center gap-2 text-xs font-sans tracking-[0.22em] uppercase text-[var(--theme-accent-dark)] mb-3">
+            <div className="flex items-center gap-2 text-xs font-sans tracking-[0.22em] uppercase text-[var(--theme-primary)] mb-3 font-medium">
               <span>Heritage & Vision</span>
               <span aria-hidden="true">·</span>
               <span>Chennai, Tamil Nadu</span>
