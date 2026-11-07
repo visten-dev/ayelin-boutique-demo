@@ -1,0 +1,6 @@
+{
+  "name": "Ayelin Boutique – Luxury Designer Couture & Tailoring",
+  "description": "Exquisite bridal blouses, bespoke lehengas, and custom ethnic couture in Medavakkam, Chennai.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

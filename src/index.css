@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  /* Default: Dark Royal Blue & Gold */
+  --theme-primary: #DFBA63;
+  --theme-primary-dark: #C49E44;
+  --theme-primary-light: #F5E1AB;
+  --theme-primary-ultra-dark: #03060E;
+  --theme-accent: #DFBA63;
+  --theme-accent-light: #F7E6B8;
+  --theme-accent-dark: #B38E33;
+  --theme-bg: #060B18;
+  --theme-bg-subtle: #0B132B;
+  --theme-card: #0F1A38;
+  --theme-text: #FBF8F2;
+  --theme-text-muted: #9EADC6;
+  --theme-footer-bg: #030712;
+}
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-theme-primary: var(--theme-primary);
+  --color-theme-dark: var(--theme-primary-dark);
+  --color-theme-light: var(--theme-primary-light);
+  --color-theme-accent: var(--theme-accent);
+  --color-theme-accent-light: var(--theme-accent-light);
+  --color-theme-accent-dark: var(--theme-accent-dark);
+  --color-theme-bg: var(--theme-bg);
+  --color-theme-bg-subtle: var(--theme-bg-subtle);
+  --color-theme-card: var(--theme-card);
+  --color-theme-text: var(--theme-text);
+  --color-theme-text-muted: var(--theme-text-muted);
+  --color-theme-footer: var(--theme-footer-bg);
+}
+
+/* Custom smooth styling */
+::selection {
+  background-color: var(--theme-accent);
+  color: #060B18;
+}
+
+/* Shimmer and thread animation styles */
+@keyframes threadFlow {
+  0% {
+    stroke-dashoffset: 1200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes goldSweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--theme-accent) 0%,
+    #FFF8E7 30%,
+    var(--theme-accent-light) 50%,
+    var(--theme-accent) 70%,
+    var(--theme-accent-dark) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldSweep 6s linear infinite;
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-editorial-display {
+  font-family: var(--font-display);
+}
+
+/* Custom scrollbar for dark royal luxury theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060B18;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A284A;
+  border-radius: 4px;
+  border: 1px solid rgba(223, 186, 99, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #253966;
+}
